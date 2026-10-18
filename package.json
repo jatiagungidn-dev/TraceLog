@@ -1,0 +1,32 @@
+{
+  "name": "tracelog",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm run dev --workspaces=app/web",
+    "dev:api": "npm run dev --workspaces=app/api",
+    "build": "npm run build --workspaces=apps/web && npm run build --workspaces=apps/api",
+    "typecheck": "npm run typecheck --workspaces=apps/web && npm run typecheck--workspaces=apps/api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jatiagungidn-dev/TraceLog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/jatiagungidn-dev/TraceLog/issues"
+  },
+  "homepage": "https://github.com/jatiagungidn-dev/TraceLog#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "typescript": "^7.0.2"
+  }
+}
