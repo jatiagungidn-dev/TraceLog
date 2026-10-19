@@ -7,6 +7,8 @@ const envSchema = z.object({
     .default("development"),
   PORT: z.coerce.number().int().positive().default(3000),
   DATABASE_URL: z.string().trim().min(1),
+  SUPABASE_URL: z.string().trim().min(1).url(),
+  SUPABASE_PUBLISHABLE_KEY: z.string().trim().min(1),
 });
 
 const parsed = envSchema.safeParse(process.env);

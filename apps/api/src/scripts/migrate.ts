@@ -1,4 +1,4 @@
-import pool from "./config/db.js";
+import pool from "../config/db.js";
 import path from "node:path";
 import { readdirSync, readFileSync } from "node:fs";
 
